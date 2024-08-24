@@ -17,3 +17,5 @@ let colors: string[] = ["red", "green", "blue"];
 //Create an array mixedArray of type (number | string)[] and assign it some values. Then, try to add a boolean value to it.
 let mixedArray: (number | string)[] = [1, "hello"];
 // mixedArray.push(true);
+
+let car: { brand: string; year: number } = { brand: "toyota", year: 2020 };

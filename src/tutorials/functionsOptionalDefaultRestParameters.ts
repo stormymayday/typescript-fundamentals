@@ -16,3 +16,19 @@ function calculateScore(
 
 console.log(calculateScore(100, 20));
 console.log(calculateScore(300));
+
+// Rest Parameters
+function sum(message: string, ...numbers: number[]): string {
+    const doubled = numbers.map((num) => num * 2);
+    console.log(doubled);
+
+    let total = numbers.reduce((previous, current) => {
+        return previous + current;
+    }, 0);
+
+    return `${message}${total}`;
+}
+
+let result = sum("The total is : ", 1, 2, 3, 4, 5);
+
+console.log(result);

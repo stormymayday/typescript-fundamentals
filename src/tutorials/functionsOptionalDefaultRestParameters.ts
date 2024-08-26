@@ -32,3 +32,10 @@ function sum(message: string, ...numbers: number[]): string {
 let result = sum("The total is : ", 1, 2, 3, 4, 5);
 
 console.log(result);
+
+// "void" return type
+function logMessage(message: string) {
+    console.log(message);
+}
+
+logMessage("Hello, Typescript");

@@ -19,3 +19,9 @@ function helloUser(user: User): void {
 
 helloUser(john);
 helloUser(susan);
+
+// Type alias for string | number
+type StringOrNumber = string | number;
+let value: StringOrNumber;
+value = "hello";
+value = 123;

@@ -25,3 +25,13 @@ type StringOrNumber = string | number;
 let value: StringOrNumber;
 value = "hello";
 value = 123;
+
+// Type alias for theme
+type Theme = "light" | "dark";
+let theme: Theme;
+theme = "dark";
+theme = "light";
+function setTheme(t: Theme) {
+    theme = t;
+}
+setTheme("dark");

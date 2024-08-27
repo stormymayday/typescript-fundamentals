@@ -35,3 +35,6 @@ const newStudent = {
 };
 
 createStudent(newStudent);
+
+// Gotcha - Excess Property Checks:
+// createStudent({ id: 1, name: "bob", email: "bobo@gmail.com" });

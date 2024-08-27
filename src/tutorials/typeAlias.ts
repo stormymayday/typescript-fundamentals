@@ -82,3 +82,12 @@ const bob: Manager = {
 printStaffDetails(alice);
 printStaffDetails(steve);
 printStaffDetails(bob);
+
+// Computed Properties
+const propName = "age";
+type Animal = {
+    [propName]: number;
+};
+let tiger: Animal = {
+    [propName]: 5,
+};

@@ -23,3 +23,15 @@ const first = createEmployee({ id: 1 });
 const second = createEmployee({ id: 2 });
 
 console.log(first, second);
+
+// Alternative
+function createStudent(student: { id: number; name: string }): void {
+    console.log(`Welcome ${student.name.toUpperCase()}`);
+}
+
+const newStudent = {
+    id: 5,
+    name: "anna",
+};
+
+createStudent(newStudent);

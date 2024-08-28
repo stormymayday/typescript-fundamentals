@@ -1,15 +1,12 @@
-// type Book = {
-//     readonly isbn: number;
-//     title: string;
-//     author: string;
-//     genre?: string;
-// };
-
 interface Book {
     readonly isbn: number;
     title: string;
     author: string;
     genre?: string;
+
+    // Methods:
+    printAuthor(): void;
+    printTitle(message: string): string;
 }
 
 const deepWork: Book = {
@@ -17,7 +14,17 @@ const deepWork: Book = {
     title: "deep work",
     author: "cal newport",
     genre: "self-help",
-    // price: 20
+
+    // Methods:
+    printAuthor() {
+        console.log(this.author);
+    },
+    printTitle(message: string): string {
+        return `${this.title} ${message}`;
+    },
 };
+
+deepWork.printAuthor();
+console.log(deepWork.printTitle("hello"));
 
 // deepWork.isbn = 'some value';

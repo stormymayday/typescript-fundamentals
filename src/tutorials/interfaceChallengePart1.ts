@@ -46,8 +46,13 @@ function getEmployee(): Person | DogOwner | Manager {
 // - Finally, create a variable called employee that can be a Person, DogOwner, or Manager, and assign it the return value of getEmployee. Then, log employee to the console.
 const employee: Person | DogOwner | Manager = getEmployee();
 
-function isManager(obj: Person | DogOwner | Manager): boolean {
+// Type Predicate
+function isManager(obj: Person | DogOwner | Manager): obj is Manager {
     return "managePeople" in obj;
+}
+
+if (isManager(employee)) {
+    employee.delegateTasks();
 }
 
 console.log(isManager(employee));

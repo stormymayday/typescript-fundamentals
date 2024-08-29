@@ -45,4 +45,9 @@ function getEmployee(): Person | DogOwner | Manager {
 
 // - Finally, create a variable called employee that can be a Person, DogOwner, or Manager, and assign it the return value of getEmployee. Then, log employee to the console.
 const employee: Person | DogOwner | Manager = getEmployee();
-console.log(employee);
+
+function isManager(obj: Person | DogOwner | Manager): boolean {
+    return "managePeople" in obj;
+}
+
+console.log(isManager(employee));

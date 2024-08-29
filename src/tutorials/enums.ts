@@ -1,7 +1,15 @@
 enum ServerResponseStatus {
     Success = 200,
-    Error = "Error",
+    Error = 500,
 }
+
+// Gotcha : Reverse Mapping
+Object.values(ServerResponseStatus).forEach((value) => {
+    // console.log(value);
+    if (typeof value === "number") {
+        console.log(value);
+    }
+});
 
 interface ServerResponse {
     result: ServerResponseStatus;
@@ -17,4 +25,4 @@ function getServerResponse(): ServerResponse {
 }
 
 const response: ServerResponse = getServerResponse();
-console.log(response);
+// console.log(response);

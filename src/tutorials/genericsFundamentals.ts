@@ -42,3 +42,10 @@ const genericNumer: GenericInterface<number> = {
 };
 console.log(genericNumer);
 console.log(genericNumer.getValue());
+
+// Promise Example
+async function someFunc(): Promise<string> {
+    return "hello world";
+}
+
+const result = someFunc();

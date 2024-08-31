@@ -74,3 +74,17 @@ function pair<T, U>(param1: T, param2: U): [T, U] {
 
 let resultPair = pair<string, number>("hello", 3);
 console.log(resultPair);
+
+// Inferred Type and Type Constraints
+let resultPair2 = pair(123, "Hello");
+console.log(resultPair2);
+
+// type constraint on the generic type T, generic type can be either a number or a string.
+function processValue<T extends number | string>(value: T): T {
+    console.log(value);
+    return value;
+}
+
+processValue("hello");
+processValue(12);
+// processValue(true);

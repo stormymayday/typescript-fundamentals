@@ -49,3 +49,20 @@ async function someFunc(): Promise<string> {
 }
 
 const result = someFunc();
+
+// Challenge - Generate Generic Array
+// function generateStringArray(length: number, value: string): string[] {
+//     let result: string[] = [];
+//     result = Array(length).fill(value);
+//     return result;
+// }
+// console.log(generateStringArray(3, "hello"));
+
+function createArray<T>(length: number, value: T): Array<T> {
+    let result: T[] = [];
+    result = Array(length).fill(value);
+    return result;
+}
+console.log(createArray(2, 1));
+console.log(createArray(3, "hello"));
+console.log(createArray(5, true));

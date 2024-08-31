@@ -66,3 +66,11 @@ function createArray<T>(length: number, value: T): Array<T> {
 console.log(createArray(2, 1));
 console.log(createArray(3, "hello"));
 console.log(createArray(5, true));
+
+// Setting up multiple variable types
+function pair<T, U>(param1: T, param2: U): [T, U] {
+    return [param1, param2];
+}
+
+let resultPair = pair<string, number>("hello", 3);
+console.log(resultPair);

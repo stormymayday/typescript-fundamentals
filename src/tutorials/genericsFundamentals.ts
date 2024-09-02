@@ -127,3 +127,16 @@ function printName<T extends { name: string }>(input: T): void {
 printName(student);
 printName(product);
 // printName(car);
+
+// Default Value
+interface StoreData<T = any> {
+    data: T[];
+}
+
+const storeNumbers: StoreData<number> = {
+    data: [1, 2, 3, 4],
+};
+
+const randomStuff: StoreData = {
+    data: ["random", 1],
+};

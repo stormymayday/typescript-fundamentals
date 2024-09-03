@@ -1,17 +1,25 @@
 const url = "https://www.course-api.com/react-tours-project";
 
-async function fetchData(url: string) {
+type Tour = {
+    id: string;
+    image: string;
+    info: string;
+    name: string;
+    price: string;
+};
+
+async function fetchData(url: string): Promise<Tour[]> {
     try {
         const response = await fetch(url);
 
-        // Fetch extra check
+        // Manual Check
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const data = await response.json();
+        const data: Tour[] = await response.json();
 
-        console.log(data);
+        // console.log(data);
 
         return data;
     } catch (error) {
@@ -20,13 +28,14 @@ async function fetchData(url: string) {
 
         console.log(errorMsg);
 
-        // If we cannot get tours data, we return an empty array
         return [];
     }
 }
 
 const tours = await fetchData(url);
 
-tours.map((tour: any) => {
+console.log(tours);
+
+tours.map((tour) => {
     console.log(tour);
 });

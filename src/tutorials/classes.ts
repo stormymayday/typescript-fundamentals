@@ -1,16 +1,21 @@
 class Book {
-    readonly title: string;
+    public readonly title: string;
     author: string;
     // checkedOut: boolean = false;
-    checkedOut = false;
+    private checkedOut = false;
 
     constructor(title: string, author: string) {
         this.title = title;
         this.author = author;
     }
+
+    checkOut() {
+        this.checkedOut = true;
+    }
 }
 
 const deepWork = new Book("Deep Work", "Cal Newport");
-deepWork.checkedOut = true;
+// deepWork.checkedOut = true;
+deepWork.checkOut();
 // deepWork.title = 'something else';
 console.log(deepWork);
